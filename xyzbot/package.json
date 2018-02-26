@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "proptypes": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
+    "react-simple-chatbot": "^0.2.9",
     "react-slack-chat": "^1.8.3"
   },
   "scripts": {
