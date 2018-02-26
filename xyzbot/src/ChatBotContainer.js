@@ -3,19 +3,23 @@ import ChatBot from "react-simple-chatbot";
 
 const STEPS = [
   {
-    id: "hello-world",
-    message: "Hello World!",
+    id: "1",
+    message: "What is your name?",
+    trigger: "2"
+  },
+  {
+    id: "2",
+    user: true,
+    trigger: "3"
+  },
+  {
+    id: "3",
+    message: "Hi {previousValue}, nice to meet you!",
     end: true
   }
 ];
 
 class ChatBotContainer extends Component {
-  state = {
-    inputValue: "",
-    currentStep: {},
-    previousStep: {}
-  };
-
   handleChange = event => {
     debugger;
   };
@@ -25,8 +29,9 @@ class ChatBotContainer extends Component {
       <div className="ChatBotContainer">
         <ChatBot
           steps={STEPS}
-          onChange={this.handleChange}
-          inputValue={this.state.inputValue}
+          headerTitle={"MLCB"}
+          hideUserAvatar={true}
+          placeholder={"Enter your responce to MLCB here"}
         />
       </div>
     );
