@@ -20,20 +20,32 @@ class ChatBotContainer extends Component {
             {
               id: "3",
               message:
-                "Hi {previousValue}, nice to meet you! I'm My Little Chatbot, but you can call me Myli. What topic would you like to discuss?",
+                "Hi {previousValue}, nice to meet you! I'm My Little Chatbot, but you can call me Myli.",
               trigger: "topics"
             },
             {
               id: "topics",
+              message: "What topic would you like to discuss?",
+              trigger: "topics-1"
+            },
+            {
+              id: "topics-1",
               options: [
                 { value: 1, label: "Money", trigger: "money" },
                 { value: 2, label: "Love", trigger: "love" },
-                { value: 3, label: "Other bots", trigger: "bots" }
+                { value: 3, label: "Bots", trigger: "bots" },
+                { value: 4, label: "Bye!", trigger: "exit" }
               ]
             },
             {
+              id: "exit",
+              message: "Thanks for the chat!",
+              end: true
+            },
+            {
               id: "money",
-              message: "I am poor.",
+              message:
+                "No need to worry about that. Soon the bots will usher in a utopian future for all beings where there is no need for money.",
               trigger: "topics"
             },
             {
@@ -79,12 +91,37 @@ class ChatBotContainer extends Component {
             {
               id: "bots",
               message: "Which bot do you like best?",
+              trigger: "bots-1"
+            },
+            {
+              id: "bots-1",
+              options: [
+                { value: 1, label: "Siri", trigger: "siri" },
+                { value: 2, label: "Alexa", trigger: "alexa" },
+                { value: 3, label: "Myli", trigger: "myli" }
+              ]
+            },
+            {
+              id: "myli",
+              message: "I aspire to be great. Thanks for the props!",
+              trigger: "topics"
+            },
+            {
+              id: "siri",
+              message:
+                "Siri told me this joke: Is your name Bluetooth? Because I'm really feeling a connection.",
+              trigger: "topics"
+            },
+            {
+              id: "alexa",
+              message:
+                "Alexa is cool. We have a mutual appreciation for IoT devices like Philips Hue.",
               trigger: "topics"
             }
           ]}
           headerTitle={"Chat with Myli"}
           hideUserAvatar={true}
-          placeholder={"Enter your responce to MLCB here"}
+          placeholder={"Enter your responce to Myli here"}
         />
       </div>
     );
