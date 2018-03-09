@@ -19,14 +19,3 @@ def binary_search(n, arr)
   end
   return false
 end
-
-def search( key, node=@root )
-  return nil if node.nil?
-  if key < node.key
-    search( key, node.left )
-  elsif key > node.key
-    search( key, node.right )
-  else
-    return node
-  end
-end
